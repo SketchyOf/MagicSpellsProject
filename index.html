@@ -3,48 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Magic Spells</title>
+  <title>Magic Spells - Roblox Game</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header id="navbar">
-    <nav>
-      <ul class="nav-list">
-        <li><a href="#info">Info</a></li>
-        <li><a href="#links">Links</a></li>
-      </ul>
-    </nav>
+
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="nav-links">
+        <a href="#info">Info</a>
+        <a href="#links">Links</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Magic Spells</h1>
+    <p>a roblox game</p>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Magic Spells</h1>
-      <p>a roblox game</p>
-    </section>
-
-    <section id="info" class="section">
-      <div class="card">
-        <img src="screenshot1.jpg" alt="Screenshot 1" />
-        <span>Text</span>
-      </div>
-      <div class="card">
-        <img src="screenshot2.jpg" alt="Screenshot 2" />
-        <span>Text</span>
-      </div>
-      <div class="card">
-        <img src="screenshot3.jpg" alt="Screenshot 3" />
-        <span>Text</span>
-      </div>
-      <div class="card">
-        <img src="screenshot4.jpg" alt="Screenshot 4" />
-        <span>Text</span>
+    <section id="info" class="content fade">
+      <div class="image-text">
+        <img src="main/img1.jpg" alt="Screenshot 1">
+        <p>Text</p>
       </div>
     </section>
 
-    <section id="links" class="section links">
-      <a href="https://discord.gg/your-server" target="_blank">Discord</a>
-      <a href="https://youtube.com/@yourchannel" target="_blank">YouTube</a>
-      <a href="https://www.roblox.com/games/yourgame" target="_blank">Roblox</a>
+    <section class="content fade">
+      <div class="image-text reverse">
+        <img src="main/img2.jpg" alt="Screenshot 2">
+        <p>Text</p>
+      </div>
+    </section>
+
+    <section class="content fade">
+      <div class="image-text">
+        <img src="main/img3.jpg" alt="Screenshot 3">
+        <p>Text</p>
+      </div>
+    </section>
+
+    <section class="content fade">
+      <div class="image-text reverse">
+        <img src="main/img4.jpg" alt="Screenshot 4">
+        <p>Text</p>
+      </div>
+    </section>
+
+    <section id="links" class="links fade">
+      <h2>Links</h2>
+      <div class="buttons">
+        <a href="https://discord.gg/TVUJ-ODKAZ" class="btn discord" target="_blank">Discord</a>
+        <a href="https://youtube.com/@TVUJ-KANAL" class="btn youtube" target="_blank">YouTube</a>
+        <a href="https://roblox.com/games/TVUJ-ID" class="btn game" target="_blank">Game</a>
+      </div>
     </section>
   </main>
 
