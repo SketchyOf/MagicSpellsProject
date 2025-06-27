@@ -4,39 +4,10 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: #0f0f0f;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-  padding-top: 70px; /* kvůli navbaru */
-}
-
-/* Navigace */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #1a1a1a;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 15px 0;
-  z-index: 1000;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s;
-}
-
-.navbar a:hover {
-  color: #999;
 }
 
 .hero {
