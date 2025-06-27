@@ -5,13 +5,11 @@ const appearOptions = {
   rootMargin: "0px 0px -50px 0px"
 };
 
-const appearOnScroll = new IntersectionObserver(function(entries) {
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('show');
+    appearOnScroll.unobserve(entry.target);
   });
 }, appearOptions);
 
