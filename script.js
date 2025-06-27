@@ -1,19 +1,16 @@
-const faders = document.querySelectorAll('.fade');
+let lastScrollTop = 0;
+const navbar = document.getElementById('navbar');
 
-const appearOptions = {
-  threshold: 0.2
-};
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-const appearOnScroll = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
-  });
-}, appearOptions);
+  if (scrollTop > lastScrollTop) {
+    // scroll down → hide
+    navbar.style.transform = 'translateY(-100%)';
+  } else {
+    // scroll up → show
+    navbar.style.transform = 'translateY(0)';
+  }
 
-faders.forEach(fade => {
-  appearOnScroll.observe(fade);
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
