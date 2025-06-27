@@ -12,10 +12,10 @@ body {
   background-color: #0f0f0f;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-  padding-top: 70px;
+  padding-top: 70px; /* kvůli navbaru */
 }
 
-/* Navigační lišta */
+/* Navigace */
 .navbar {
   position: fixed;
   top: 0;
@@ -142,7 +142,7 @@ main {
   filter: brightness(1.2);
 }
 
-/* Animace */
+/* Animace zjevení */
 .fade {
   opacity: 0;
   transform: translateY(40px);
