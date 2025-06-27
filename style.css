@@ -1,4 +1,22 @@
-/* Reset a základy */
+const faders = document.querySelectorAll('.fade');
+
+const appearOptions = {
+  threshold: 0.25
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show'); // nově odebere .show, když zmizí ze zorného pole
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fade => {
+  appearOnScroll.observe(fade);
+});
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +30,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Navigace */
 .navbar {
   position: sticky;
   top: 0;
@@ -31,15 +48,9 @@ body {
   padding: 15px 20px;
 }
 
-.logo {
-  font-size: 1.5rem;
-  color: white;
-}
-
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 .nav-links a {
@@ -151,7 +162,7 @@ main {
   filter: brightness(1.2);
 }
 
-/* Animace při scrollování */
+/* Scroll animace */
 .fade {
   opacity: 0;
   transform: translateY(40px);
