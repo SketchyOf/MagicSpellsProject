@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -69,26 +70,15 @@ body {
 }
 
 main {
-  padding: 0;
+  padding: 50px 20px;
 }
 
-/* SEKCE POZADÍ */
+/* INFO SEKCE */
 #info {
-  background-color: #151515;  /* Info sekce - šedá */
+  background-color: #1a1a1a; /* Tmavě šedá */
   padding: 60px 20px;
 }
 
-#devs {
-  background-color: #0f0f0f;  /* Devs sekce - černá */
-  padding: 60px 20px;
-}
-
-#links {
-  background-color: #151515;  /* Links sekce - šedá */
-  padding: 60px 20px;
-}
-
-/* OBSAH */
 .image-text {
   display: flex;
   align-items: center;
@@ -96,7 +86,6 @@ main {
   gap: 30px;
   flex-wrap: wrap;
   margin-bottom: 60px;
-  text-align: left;
 }
 
 .image-text.reverse {
@@ -121,10 +110,28 @@ main {
   max-width: 350px;
   font-size: 1.2rem;
   line-height: 1.6;
+  text-align: left;
 }
 
-/* DEVS */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* DEVS SEKCE */
+#devs {
+  background-color: #0f0f0f; /* Černá */
+  padding: 60px 20px;
+}
+
 #devs h2 {
+  text-align: left;
   font-size: 2.5rem;
   margin-bottom: 40px;
 }
@@ -136,6 +143,7 @@ main {
 .dev-image-text {
   display: flex;
   align-items: flex-start;
+  justify-content: flex-start; /* Vše doleva */
   gap: 30px;
   flex-wrap: wrap;
 }
@@ -149,27 +157,27 @@ main {
 }
 
 .dev-text {
-  max-width: 350px;
-}
-
-.dev-text p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  text-align: left; /* Text vlevo */
 }
 
 .dev-name {
+  font-size: 1.5rem;
   font-weight: bold;
-  font-size: 1rem;
-  color: #ccc;
   margin-bottom: 10px;
 }
 
-/* LINKS */
-.links {
-  text-align: center;
+#devs p {
+  margin: 0;
 }
 
-.links h2 {
+/* LINKS SEKCE */
+#links {
+  background-color: #1a1a1a; /* Tmavě šedá */
+  text-align: center;
+  padding: 60px 20px;
+}
+
+#links h2 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
@@ -197,23 +205,4 @@ main {
 
 .btn:hover {
   filter: brightness(1.2);
-}
-
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-  .image-text,
-  .dev-image-text {
-    flex-direction: column !important;
-    text-align: center;
-  }
 }
