@@ -1,4 +1,4 @@
-// Navbar hide/show
+// Navbar hide/show on scroll
 let lastScrollTop = 0;
 const navbar = document.getElementById('navbar');
 
