@@ -1,157 +1,183 @@
+/* Base Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: #fff;
-  background: #000;
+  background: #000; /* plain background */
+  color: white;
 }
 
-.navbar {
-  position: fixed;
+/* Navbar */
+header {
+  position: sticky;
   top: 0;
-  width: 100%;
-  background: #111;
-  display: flex;
-  justify-content: flex-start;
-  padding: 15px 30px;
+  background-color: #111;
+  padding: 12px 20px;
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
 }
 
-.navbar ul {
+.nav-list {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  gap: 30px;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
-.navbar a {
+.nav-list li a {
   text-decoration: none;
-  color: #fff;
+  color: white;
   font-weight: bold;
 }
 
+/* Hero Section */
 .hero {
-  height: 100vh;
-  background: url('background.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-content {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 40px;
-  border-radius: 10px;
-}
-
-.hero h1 {
-  font-size: 4rem;
-  margin: 0;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  margin-top: 20px;
-}
-
-.hero-thumbnail {
-  width: 100px;
-  margin-top: 20px;
-  border-radius: 8px;
-}
-
-.section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
-  padding: 80px 20px;
-  background: #111;
+  justify-content: center;
+  height: 60vh;
+  text-align: center;
+  background: url('thumbnail.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
 }
 
-.section-title {
-  width: 100%;
-  max-width: 1200px;
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay for text */
+}
+
+.hero h1,
+.hero-subtitle {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4em;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+/* Sections */
+.section {
+  padding: 40px 20px;
+}
+
+.section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
   text-align: left;
-  font-size: 2rem;
 }
 
-.card,
-.dev-card {
+/* Info Cards */
+#info {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.card {
   background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 800px;
-  width: 100%;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  max-width: 200px;
 }
 
 .card img {
-  width: 200px;
-  border-radius: 8px;
-  margin-right: 20px;
+  width: 100%;
+  border-radius: 10px;
   transform: rotate(-2deg);
 }
 
-.card-text {
-  flex: 1;
-  text-align: left;
+.card span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-.dev-card img {
-  width: 150px;
-  border-radius: 8px;
-  margin-right: 20px;
+/* Devs Section */
+.devs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.dev-text {
-  flex: 1;
-  text-align: left;
+.dev {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.link-btn {
-  display: inline-block;
+.dev-image {
+  width: 120px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.dev-info {
+  max-width: 600px;
+}
+
+.dev-info h3 {
+  margin: 0 0 10px;
+}
+
+/* Links Section */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.links a {
+  color: white;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1);
   padding: 10px 20px;
-  margin: 5px;
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
-  color: #fff;
+  transition: background 0.3s;
 }
 
-.discord { background: #5865F2; }
-.youtube { background: #FF0000; }
-.game { background: #333; }
-
-.appear {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+.links a:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
-.appear.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive: stack for mobile */
+/* Responsive */
 @media (max-width: 768px) {
-  .card, .dev-card {
+  .hero h1 {
+    font-size: 2.5em;
+  }
+  .hero-subtitle {
+    font-size: 1.2em;
+  }
+
+  #info {
+    justify-content: center;
+  }
+
+  .dev {
     flex-direction: column;
     text-align: center;
   }
 
-  .card img,
-  .dev-card img {
-    margin-right: 0;
-    margin-bottom: 20px;
-    transform: none;
+  .dev-info {
+    max-width: 100%;
   }
 
-  .section-title {
+  .section h2 {
     text-align: center;
   }
 }
