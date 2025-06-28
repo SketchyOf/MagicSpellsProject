@@ -92,33 +92,39 @@ body {
 
 .card img {
   width: 200px;
-  margin-right: 20px;
   border-radius: 8px;
+  margin-right: 20px;
   transform: rotate(-2deg);
 }
 
 .card-text {
   flex: 1;
+  text-align: left;
 }
 
 .dev-card img {
   width: 150px;
-  margin-right: 20px;
   border-radius: 8px;
+  margin-right: 20px;
 }
 
 .dev-text {
   flex: 1;
+  text-align: left;
 }
 
-.section a {
-  background: #222;
+.link-btn {
+  display: inline-block;
   padding: 10px 20px;
   margin: 5px;
   border-radius: 6px;
-  color: #fff;
   text-decoration: none;
+  color: #fff;
 }
+
+.discord { background: #5865F2; }
+.youtube { background: #FF0000; }
+.game { background: #333; }
 
 .appear {
   opacity: 0;
@@ -131,7 +137,7 @@ body {
   transform: translateY(0);
 }
 
-/* Responsive */
+/* Responsive: stack for mobile */
 @media (max-width: 768px) {
   .card, .dev-card {
     flex-direction: column;
