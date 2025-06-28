@@ -65,14 +65,40 @@ body {
 
 .section {
   padding: 60px 20px;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .section-title {
   text-align: left;
   font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 250px;
+  text-align: center;
+  transform: rotate(-2deg);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
 }
 
 .dev {
@@ -118,6 +144,10 @@ body {
   .hero-content {
     flex-direction: column;
     text-align: center;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
   }
   .dev {
     flex-direction: column;
