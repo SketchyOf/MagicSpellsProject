@@ -1,66 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Magic Spells - Roblox Game</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #000;
+}
 
-  <nav class="navbar">
-    <div class="nav-content">
-      <div class="nav-links">
-        <a href="#info">Info</a>
-        <a href="#links">Links</a>
-      </div>
-    </div>
-  </nav>
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
+  display: flex;
+  justify-content: flex-start;
+  padding: 15px 30px;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
 
-  <header class="hero">
-    <h1>Magic Spells</h1>
-    <p>a roblox game</p>
-  </header>
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
 
-  <main>
-    <section id="info" class="content fade">
-      <div class="image-text">
-        <img src="main/img1.jpg" alt="Screenshot 1">
-        <p>Text</p>
-      </div>
-    </section>
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
 
-    <section class="content fade">
-      <div class="image-text reverse">
-        <img src="main/img2.jpg" alt="Screenshot 2">
-        <p>Text</p>
-      </div>
-    </section>
+.hero {
+  padding: 120px 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
 
-    <section class="content fade">
-      <div class="image-text">
-        <img src="main/img3.jpg" alt="Screenshot 3">
-        <p>Text</p>
-      </div>
-    </section>
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-    <section class="content fade">
-      <div class="image-text reverse">
-        <img src="main/img4.jpg" alt="Screenshot 4">
-        <p>Text</p>
-      </div>
-    </section>
+.hero h1 {
+  margin: 0;
+  font-size: 3rem;
+}
 
-    <section id="links" class="links fade">
-      <h2>Links</h2>
-      <div class="buttons">
-        <a href="https://discord.gg/Cn3x7NM383" class="btn discord" target="_blank">Discord</a>
-        <a href="https://youtube.com/@TVUJ-KANAL" class="btn youtube" target="_blank">YouTube</a>
-        <a href="https://roblox.com/games/TVUJ-ID" class="btn game" target="_blank">Game</a>
-      </div>
-    </section>
-  </main>
+.hero .subtitle {
+  display: block;
+  font-size: 1rem;
+  font-weight: normal;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+.hero-thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: left;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.dev {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.dev img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.dev-info h3 {
+  margin: 0 0 10px;
+}
+
+.section a {
+  display: inline-block;
+  background: #222;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.appear {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.appear.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dev {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dev img {
+    margin-bottom: 10px;
+  }
+}
