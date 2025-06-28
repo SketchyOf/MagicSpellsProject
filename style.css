@@ -5,6 +5,7 @@
 }
 
 body {
+  background-color: #0f0f0f; /* základní černé pozadí */
   font-family: 'Segoe UI', sans-serif;
   color: white;
   scroll-behavior: smooth;
@@ -72,17 +73,17 @@ main {
 }
 
 #info {
-  background-color: #151515; /* tmavě šedá */
+  background-color: #151515;  /* Info sekce - tmavě šedá */
   padding: 60px 20px;
 }
 
 #devs {
-  background-color: #0f0f0f; /* černá */
+  background-color: #0f0f0f;  /* Devs sekce - černá */
   padding: 60px 20px;
 }
 
 #links {
-  background-color: #151515; /* tmavě šedá */
+  background-color: #151515;  /* Links sekce - tmavě šedá */
   padding: 60px 20px;
 }
 
