@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #0f0f0f; /* základní černé pozadí */
+  background-color: #0f0f0f;
   font-family: 'Segoe UI', sans-serif;
   color: white;
   scroll-behavior: smooth;
@@ -72,8 +72,9 @@ main {
   padding: 0;
 }
 
+/* SEKCE POZADÍ */
 #info {
-  background-color: #151515;  /* Info sekce - tmavě šedá */
+  background-color: #151515;  /* Info sekce - šedá */
   padding: 60px 20px;
 }
 
@@ -83,10 +84,11 @@ main {
 }
 
 #links {
-  background-color: #151515;  /* Links sekce - tmavě šedá */
+  background-color: #151515;  /* Links sekce - šedá */
   padding: 60px 20px;
 }
 
+/* OBSAH */
 .image-text {
   display: flex;
   align-items: center;
@@ -121,6 +123,7 @@ main {
   line-height: 1.6;
 }
 
+/* DEVS */
 #devs h2 {
   font-size: 2.5rem;
   margin-bottom: 40px;
@@ -161,6 +164,7 @@ main {
   margin-bottom: 10px;
 }
 
+/* LINKS */
 .links {
   text-align: center;
 }
