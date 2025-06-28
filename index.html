@@ -2,72 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Magic Spells</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="navbar" id="navbar">
+  <header id="navbar">
     <nav>
-      <ul>
+      <ul class="nav-list">
         <li><a href="#info">Info</a></li>
-        <li><a href="#developers">Devs</a></li>
+        <li><a href="#devs">Devs</a></li>
         <li><a href="#links">Links</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
+  <main>
+    <section class="hero">
       <h1>Magic Spells</h1>
-      <img src="thumbnail.jpg" alt="Game Thumbnail" class="hero-thumbnail">
-      <p>a roblox game</p>
-    </div>
-  </section>
+      <p class="hero-subtitle">a roblox game</p>
+    </section>
 
-  <!-- Info Section -->
-  <section id="info" class="section">
-    <h2 class="section-title">Info</h2>
-    <div class="card appear">
-      <img src="screenshot1.jpg" alt="Screenshot 1" />
-      <div class="card-text">
-        <p>Text about game 1</p>
+    <section id="info" class="section">
+      <h2>Info</h2>
+      <div class="card">
+        <img src="screenshot1.jpg" alt="Screenshot 1" />
+        <span>Text</span>
       </div>
-    </div>
-    <div class="card appear">
-      <img src="screenshot2.jpg" alt="Screenshot 2" />
-      <div class="card-text">
-        <p>Text about game 2</p>
+      <div class="card">
+        <img src="screenshot2.jpg" alt="Screenshot 2" />
+        <span>Text</span>
       </div>
-    </div>
-  </section>
+      <div class="card">
+        <img src="screenshot3.jpg" alt="Screenshot 3" />
+        <span>Text</span>
+      </div>
+      <div class="card">
+        <img src="screenshot4.jpg" alt="Screenshot 4" />
+        <span>Text</span>
+      </div>
+    </section>
 
-  <!-- Developers Section -->
-  <section id="developers" class="section">
-    <h2 class="section-title">Devs</h2>
-    <div class="dev-card appear">
-      <img src="dev1.jpg" alt="Developer 1" />
-      <div class="dev-text">
-        <p>Developer 1 info</p>
+    <section id="devs" class="section devs">
+      <h2>Devs</h2>
+      <div class="dev">
+        <img src="dev1.jpg" alt="Dev 1" class="dev-image" />
+        <div class="dev-info">
+          <h3>Dev Name 1</h3>
+          <p>Short description about developer 1.</p>
+        </div>
       </div>
-    </div>
-    <div class="dev-card appear">
-      <img src="dev2.jpg" alt="Developer 2" />
-      <div class="dev-text">
-        <p>Developer 2 info</p>
+      <div class="dev">
+        <img src="dev2.jpg" alt="Dev 2" class="dev-image" />
+        <div class="dev-info">
+          <h3>Dev Name 2</h3>
+          <p>Short description about developer 2.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Links Section -->
-  <section id="links" class="section appear">
-    <h2 class="section-title">Links</h2>
-    <a href="https://discord.com" target="_blank" class="link-btn discord">Discord</a>
-    <a href="https://youtube.com" target="_blank" class="link-btn youtube">YouTube</a>
-    <a href="https://roblox.com" target="_blank" class="link-btn game">Game</a>
-  </section>
+    <section id="links" class="section links">
+      <a href="https://discord.gg/your-server" target="_blank">Discord</a>
+      <a href="https://youtube.com/@yourchannel" target="_blank">YouTube</a>
+      <a href="https://www.roblox.com/games/yourgame" target="_blank">Roblox</a>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
