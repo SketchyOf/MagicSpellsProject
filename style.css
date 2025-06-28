@@ -1,167 +1,110 @@
-
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-}
-
 body {
-  font-family: 'Segoe UI', sans-serif;
-  color: white;
-  scroll-behavior: smooth;
-  background: #0f0f0f; /* fallback */
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #000;
 }
 
+/* Navbar */
 .navbar {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-color: #111;
-  z-index: 1000;
-  border-bottom: 2px solid #333;
-}
-
-.nav-content {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 15px 20px;
+  background: #111;
+  padding: 1rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .nav-links a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.3s;
 }
 
-.nav-links a:hover {
-  background-color: #222;
-}
-
+/* Hero */
 .hero {
   text-align: center;
-  padding: 80px 20px;
+  padding: 4rem 1rem;
+  background: #000;
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
 
 .hero p {
-  font-size: 1.5rem;
-  margin-top: 10px;
+  font-size: 1.2rem;
 }
 
-main {
-  width: 100%;
-}
-
-/* === INFO SECTION === */
+/* Sections */
 #info {
-  background-color: #1a1a1a;  /* šedá */
-  width: 100%;
-  padding: 60px 20px;
+  background: #1e1e1e; /* Tmavě šedá */
+  padding: 4rem 1rem;
 }
 
-#info .image-text {
+#devs {
+  background: #000; /* Černá */
+  padding: 4rem 1rem;
+}
+
+#links {
+  background: #1e1e1e; /* Tmavě šedá */
+  padding: 4rem 1rem;
+}
+
+/* Image-Text Blocks */
+.image-text {
   display: flex;
   align-items: center;
-  gap: 40px;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
   flex-wrap: wrap;
-  margin: 60px auto;
-  max-width: 1000px;
 }
 
-#info .image-text:nth-child(odd) {
-  flex-direction: row;
-}
-
-#info .image-text:nth-child(even) {
+.image-text.reverse {
   flex-direction: row-reverse;
 }
 
-#info .image-text img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border: 4px solid white;
-  border-radius: 12px;
-  transform: rotate(-3deg);
-  transition: transform 0.3s;
+.image-text img {
+  width: 300px;
+  border-radius: 10px;
 }
 
-#info .image-text:nth-child(even) img {
-  transform: rotate(3deg);
+.image-text p {
+  max-width: 300px;
+  font-size: 1.1rem;
 }
 
-#info .image-text p {
-  max-width: 350px;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  text-align: left;
-}
-
-#info .image-text.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-#info .image-text.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* === DEVS SECTION === */
-#devs {
-  background-color: #000;  /* černá */
-  width: 100%;
-  padding: 60px 20px;
-}
-
+/* Dev Blocks */
 #devs h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  text-align: left;
-  max-width: 1000px;
-  margin: 0 auto 40px auto;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .dev-block {
-  margin-bottom: 60px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 3rem;
 }
 
 .dev-image-text {
   display: flex;
-  align-items: flex-start;
-  gap: 30px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .dev-image-text img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border: 4px solid white;
-  border-radius: 12px;
+  width: 200px;
+  border-radius: 10px;
 }
 
 .dev-text {
@@ -169,56 +112,44 @@ main {
 }
 
 .dev-name {
-  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
-.dev-image-text.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.dev-image-text.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* === LINKS SECTION === */
-#links {
-  background-color: #1a1a1a;  /* šedá */
-  width: 100%;
-  text-align: center;
-  padding: 60px 20px;
-}
-
+/* Links Section */
 #links h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .btn {
-  padding: 15px 25px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 8px;
-  color: white;
+  background: #333;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
   text-decoration: none;
-  transition: background 0.3s;
+  font-weight: bold;
 }
 
-.discord { background-color: #5865F2; }
-.youtube { background-color: #FF0000; }
-.game    { background-color: #222; }
-
 .btn:hover {
-  filter: brightness(1.2);
+  background: #555;
+}
+
+/* Animace pro obsah */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
