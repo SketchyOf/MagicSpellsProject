@@ -74,7 +74,7 @@ main {
   padding: 4rem 1rem;
 }
 
-/* Info Blocks */
+/* Info Blocks (PC) */
 .image-text {
   display: flex;
   align-items: center;
@@ -106,22 +106,7 @@ main {
   font-size: 1.1rem;
 }
 
-@media (max-width: 768px) {
-  .image-text,
-  .image-text.reverse,
-  .dev-image-text,
-  .dev-image-text.reverse {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .image-text img,
-  .image-text.reverse img {
-    transform: none;
-  }
-}
-
-/* Dev Blocks */
+/* Devs Blocks (PC) */
 #devs h2 {
   text-align: center;
   margin-bottom: 2rem;
@@ -193,4 +178,25 @@ main {
 .fade.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* RESPONSIVE FIX */
+@media (max-width: 768px) {
+  .image-text,
+  .image-text.reverse,
+  .dev-image-text,
+  .dev-image-text.reverse {
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .image-text img,
+  .image-text.reverse img {
+    transform: none; /* no rotate on mobile */
+  }
+
+  .dev-text {
+    text-align: left;
+  }
 }
