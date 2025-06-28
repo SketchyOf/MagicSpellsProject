@@ -1,4 +1,4 @@
-// Navbar hide/show on scroll
+// Hide/show navbar on scroll
 let lastScrollTop = 0;
 const navbar = document.getElementById('navbar');
 
@@ -14,10 +14,10 @@ window.addEventListener('scroll', () => {
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
-// Appear on scroll
+// Reveal sections on scroll
 const appearElements = document.querySelectorAll('.appear');
 
-const observer = new IntersectionObserver(
+const appearOnScroll = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -25,7 +25,9 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.2 }
+  {
+    threshold: 0.2,
+  }
 );
 
-appearElements.forEach(el => observer.observe(el));
+appearElements.forEach(el => appearOnScroll.observe(el));
