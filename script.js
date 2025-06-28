@@ -1,4 +1,4 @@
-// Intersection Observer - animace se opakují
+// Repeated fade animation
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
