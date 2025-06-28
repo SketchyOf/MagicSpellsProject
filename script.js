@@ -5,10 +5,10 @@ window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
   if (scrollTop > lastScrollTop) {
-    // Scroll down → hide navbar
+    // scroll down → hide
     navbar.style.transform = 'translateY(-100%)';
   } else {
-    // Scroll up → show navbar
+    // scroll up → show
     navbar.style.transform = 'translateY(0)';
   }
 
