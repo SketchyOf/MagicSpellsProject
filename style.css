@@ -13,7 +13,17 @@ body {
 
 /* Navbar */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: #111;
+  z-index: 999;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1rem;
 }
 
@@ -44,6 +54,10 @@ body {
   font-size: 1.2rem;
 }
 
+main {
+  padding-top: 80px; /* fixní navbar mezera */
+}
+
 /* Sections */
 #info {
   background: #1e1e1e;
@@ -60,7 +74,7 @@ body {
   padding: 4rem 1rem;
 }
 
-/* Info Blocks - squares with rotation */
+/* Info Blocks */
 .image-text {
   display: flex;
   align-items: center;
@@ -94,9 +108,16 @@ body {
 
 @media (max-width: 768px) {
   .image-text,
-  .image-text.reverse {
+  .image-text.reverse,
+  .dev-image-text,
+  .dev-image-text.reverse {
     flex-direction: column;
     text-align: center;
+  }
+
+  .image-text img,
+  .image-text.reverse img {
+    transform: none;
   }
 }
 
@@ -116,6 +137,10 @@ body {
   justify-content: flex-start;
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+.dev-image-text.reverse {
+  flex-direction: row-reverse;
 }
 
 .dev-image-text img {
