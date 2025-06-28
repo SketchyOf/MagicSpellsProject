@@ -6,8 +6,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.1 // spustí se, když je 10% viditelné
+  threshold: 0.1
 });
 
-// Vyber všechny elementy s třídou .fade
 document.querySelectorAll(".fade").forEach((el) => observer.observe(el));
