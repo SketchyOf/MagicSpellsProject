@@ -1,12 +1,11 @@
-/* Base Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #000; /* plain background */
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: white;
 }
 
-/* Navbar */
 header {
   position: sticky;
   top: 0;
@@ -30,59 +29,27 @@ header {
   font-weight: bold;
 }
 
-/* Hero Section */
 .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 60vh;
   text-align: center;
-  background: url('thumbnail.jpg') no-repeat center center;
-  background-size: cover;
-  position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* dark overlay for text */
-}
-
-.hero h1,
-.hero-subtitle {
-  position: relative;
-  z-index: 1;
+  padding: 80px 20px 40px;
 }
 
 .hero h1 {
-  font-size: 4em;
+  font-size: 3em;
   margin: 0;
 }
 
-.hero-subtitle {
+.hero p {
   font-size: 1.5em;
   margin-top: 10px;
 }
 
-/* Sections */
 .section {
-  padding: 40px 20px;
-}
-
-.section h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-/* Info Cards */
-#info {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  justify-content: flex-start;
+  padding: 40px 20px;
 }
 
 .card {
@@ -92,53 +59,19 @@ header {
   padding: 10px;
   text-align: center;
   max-width: 200px;
+  transition: transform 0.3s;
 }
 
 .card img {
   width: 100%;
   border-radius: 10px;
-  transform: rotate(-2deg);
 }
 
 .card span {
   display: block;
   margin-top: 10px;
   font-weight: bold;
-}
-
-/* Devs Section */
-.devs {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.dev {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.dev-image {
-  width: 120px;
-  height: auto;
-  border-radius: 12px;
-}
-
-.dev-info {
-  max-width: 600px;
-}
-
-.dev-info h3 {
-  margin: 0 0 10px;
-}
-
-/* Links Section */
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  color: white;
 }
 
 .links a {
@@ -153,31 +86,4 @@ header {
 
 .links a:hover {
   background: rgba(255, 255, 255, 0.3);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5em;
-  }
-  .hero-subtitle {
-    font-size: 1.2em;
-  }
-
-  #info {
-    justify-content: center;
-  }
-
-  .dev {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .dev-info {
-    max-width: 100%;
-  }
-
-  .section h2 {
-    text-align: center;
-  }
 }
