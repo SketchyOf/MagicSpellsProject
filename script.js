@@ -1,19 +1,31 @@
-const faders = document.querySelectorAll('.fade');
+// Navbar hide/show
+let lastScrollTop = 0;
+const navbar = document.getElementById('navbar');
 
-const appearOptions = {
-  threshold: 0.2
-};
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
 
-const appearOnScroll = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
-  });
-}, appearOptions);
+  if (scrollTop > lastScrollTop) {
+    navbar.style.transform = 'translateY(-100%)';
+  } else {
+    navbar.style.transform = 'translateY(0)';
+  }
 
-faders.forEach(fade => {
-  appearOnScroll.observe(fade);
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
+
+// Appear on scroll
+const appearElements = document.querySelectorAll('.appear');
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+appearElements.forEach(el => observer.observe(el));
