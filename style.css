@@ -50,49 +50,47 @@ body {
 }
 
 .hero {
-  background-image: url("main/background.jpg");
-  background-size: cover;
-  background-position: center;
+  background: none;
   padding: 80px 20px;
   text-align: center;
-  color: white;
 }
 
 .hero h1 {
   font-size: 4rem;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
 .hero p {
   font-size: 1.5rem;
   margin-top: 10px;
-  text-shadow: 0 0 5px rgba(0,0,0,0.7);
 }
 
 main {
   padding: 50px 20px;
 }
 
-/* INFO SEKCE */
+/* INFO SECTION: always gray background */
 #info {
-  background-color: #1a1a1a; /* Tmavě šedá */
+  background-color: #1a1a1a;
   padding: 60px 20px;
 }
 
-.image-text {
+#info .image-text {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
   margin-bottom: 60px;
 }
 
-.image-text.reverse {
+#info .image-text:nth-child(odd) {
+  flex-direction: row;
+}
+
+#info .image-text:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-.image-text img {
+#info .image-text img {
   width: 250px;
   height: 250px;
   object-fit: cover;
@@ -102,31 +100,31 @@ main {
   transition: transform 0.3s;
 }
 
-.image-text.reverse img {
+#info .image-text:nth-child(even) img {
   transform: rotate(3deg);
 }
 
-.image-text p {
+#info .image-text p {
   max-width: 350px;
   font-size: 1.2rem;
   line-height: 1.6;
   text-align: left;
 }
 
-.fade {
+#info .image-text.fade {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.fade.show {
+#info .image-text.fade.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* DEVS SEKCE */
+/* DEVS SECTION: always black background */
 #devs {
-  background-color: #0f0f0f; /* Černá */
+  background-color: #0f0f0f;
   padding: 60px 20px;
 }
 
@@ -143,7 +141,7 @@ main {
 .dev-image-text {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start; /* Vše doleva */
+  justify-content: flex-start;
   gap: 30px;
   flex-wrap: wrap;
 }
@@ -157,7 +155,7 @@ main {
 }
 
 .dev-text {
-  text-align: left; /* Text vlevo */
+  text-align: left;
 }
 
 .dev-name {
@@ -170,9 +168,20 @@ main {
   margin: 0;
 }
 
-/* LINKS SEKCE */
+.dev-image-text.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.dev-image-text.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* LINKS SECTION: always gray background */
 #links {
-  background-color: #1a1a1a; /* Tmavě šedá */
+  background-color: #1a1a1a;
   text-align: center;
   padding: 60px 20px;
 }
