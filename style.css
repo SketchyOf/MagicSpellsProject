@@ -1,202 +1,208 @@
-/* Reset */
-* {
+/* === GLOBAL === */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111; /* základní černé pozadí */
+  color: #fff;
+}
+
+main {
+  padding-top: 60px; /* rezerva pro navbar */
+}
+
+h1, h2, p {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  color: #fff;
-  background: #000;
-}
-
-/* Navbar */
+/* === NAVBAR === */
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   background: #111;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .nav-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.nav-links {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  padding: 10px 0;
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  margin: 0 15px;
 }
 
-/* Hero */
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* === HERO === */
 .hero {
   text-align: center;
-  padding: 4rem 1rem;
-  background: #000;
+  padding: 100px 20px 50px;
+  background: #000; /* černé pozadí hero */
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 48px;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 18px;
+  color: #ccc;
 }
 
-main {
-  padding-top: 80px; /* fixní navbar mezera */
-}
-
-/* Sections */
+/* === INFO SECTION === */
 #info {
-  background: #1e1e1e;
-  padding: 4rem 1rem;
+  background: #222; /* šedé pozadí info sekce */
+  padding: 50px 20px;
 }
 
-#devs {
-  background: #000;
-  padding: 4rem 1rem;
-}
-
-#links {
-  background: #1e1e1e;
-  padding: 4rem 1rem;
-}
-
-/* Info Blocks (PC) */
 .image-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 4rem;
-  flex-wrap: wrap;
-}
-
-.image-text.reverse {
-  flex-direction: row-reverse;
+  margin: 50px 0;
 }
 
 .image-text img {
   width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border: 4px solid #fff;
+  max-width: 80%;
+  height: auto;
+  border: 3px solid white;
   border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.image-text.left img {
   transform: rotate(-5deg);
 }
 
-.image-text.reverse img {
+.image-text.right img {
   transform: rotate(5deg);
 }
 
 .image-text p {
-  max-width: 300px;
-  font-size: 1.1rem;
+  margin: 0 20px;
+  max-width: 400px;
 }
 
-/* Devs Blocks (PC) */
-#devs h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.dev-block {
-  margin-bottom: 3rem;
-}
-
-.dev-image-text {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.dev-image-text.reverse {
+.reverse {
   flex-direction: row-reverse;
 }
 
+/* Mobilní zobrazení - obrázky rotují i zde */
+@media (max-width: 768px) {
+  .image-text {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .reverse {
+    flex-direction: column;
+  }
+
+  .image-text.left img {
+    transform: rotate(-5deg);
+  }
+
+  .image-text.right img {
+    transform: rotate(5deg);
+  }
+
+  .image-text p {
+    margin: 20px 0 0;
+  }
+}
+
+/* === DEVS SECTION === */
+#devs {
+  background: #000;
+  padding: 50px 20px;
+}
+
+#devs h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dev-block {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+}
+
 .dev-image-text img {
-  width: 200px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
   border-radius: 10px;
+  margin-right: 20px;
 }
 
 .dev-text {
   text-align: left;
 }
 
-.dev-name {
+.dev-text .dev-name {
   font-weight: bold;
-  font-size: 1.2rem;
+  margin-bottom: 5px;
 }
 
-/* Links Section */
-#links h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  background: #333;
-  color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.btn:hover {
-  background: #555;
-}
-
-/* Fade Animation */
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* RESPONSIVE FIX */
 @media (max-width: 768px) {
-  .image-text,
-  .image-text.reverse,
-  .dev-image-text,
-  .dev-image-text.reverse {
-    flex-direction: column;
-    text-align: left;
-    align-items: flex-start;
+  .dev-block {
+    flex-direction: row;
+    align-items: center;
   }
 
-  .image-text img,
-  .image-text.reverse img {
-    transform: none; /* no rotate on mobile */
+  .dev-image-text img {
+    margin-right: 20px;
+    margin-bottom: 0;
   }
 
   .dev-text {
     text-align: left;
   }
+}
+
+/* === LINKS SECTION === */
+#links {
+  background: #222;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+#links h2 {
+  margin-bottom: 30px;
+}
+
+.buttons .btn {
+  display: inline-block;
+  margin: 10px 15px;
+  padding: 12px 25px;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.buttons .btn:hover {
+  background: #666;
+}
+
+/* === ANIMACE FADE === */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
